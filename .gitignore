@@ -24,6 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 
-.ico
-.png
-.txt
+/.ico
+/.png
+/.txt
