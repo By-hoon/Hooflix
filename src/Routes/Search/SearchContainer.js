@@ -1,3 +1,4 @@
+
 import React from "react";
 import SearchPresenter from "./SearchPresenter";
 import { moviesApi, tvApi } from "../../api";
@@ -45,9 +46,9 @@ export default class extends React.Component {
       <SearchPresenter
         movieResults={movieResults}
         tvResults={tvResults}
-        searchTerm={searchTerm}
         loading={loading}
         error={error}
+        searchTerm={searchTerm}
         handleSubmit={this.handleSubmit}
       />
     );
