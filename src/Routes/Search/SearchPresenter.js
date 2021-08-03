@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import Loader from "Components/Loader";
 import Section from "Components/Section";
 import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-  padding: 0px 20px;
+  padding: 20px;
 `;
 
 const Form = styled.form`
@@ -31,6 +32,9 @@ const SearchPresenter = ({
     updateTerm
 }) => (
     <Container>
+        <Helmet>
+            <title>Search | Hooflix</title>
+        </Helmet>
         <Form onSubmit={handleSubmit}>
             <Input
                 placeholder="Search Movies or TV Shows..."
@@ -49,7 +53,7 @@ const SearchPresenter = ({
                                 key={movie.id}
                                 id={movie.id}
                                 imageUrl={movie.poster_path}
-                                title={movie.title}
+                                title={movie.original_title}
                                 rating={movie.vote_average}
                                 year={movie.release_date.substring(0, 4)}
                                 isMovie={true}
@@ -64,7 +68,7 @@ const SearchPresenter = ({
                                 key={show.id}
                                 id={show.id}
                                 imageUrl={show.poster_path}
-                                title={show.name}
+                                title={show.original_name}
                                 rating={show.vote_average}
                                 year={show.first_air_date.substring(0, 4)}
                             />
